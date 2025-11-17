@@ -1,0 +1,119 @@
+---
+import imagen_artist from "../imgs/jostom_card.jpg";
+---
+
+<div class="info_artist_card">
+  <img src={imagen_artist.src} class="info_artist_img" />
+  <div class="info_artist_content">
+    <h3 class="info_artist_name">Joaquin Tombesi</h3>
+    <div class="info_artist_description">
+      <p>
+        · Estudiante de la Licenciatura en Artes Electrónicas en la Universidad
+        Nacional de Tres de Febrero, donde desarrollo proyectos que combinan
+        arte, tecnología y experimentación audiovisual.
+      </p>
+
+      <p>
+        · Serigrafista desde el año 2014, mas especificamente en el rubro
+        textil. Experiencia en todas las etapas del proceso: preparación de
+        matrices, mezcla de tintas, impresión en distintos tipos de telas y
+        resolución de problemas técnicos durante la producción.
+      </p>
+
+      <p>
+        · Diseño grafico orientado a la creacion de diseños para marcas de ropa,
+        manejo de Adobe Illustrator & Photoshop.
+      </p>
+
+      <p>
+        · Edicion de video para redes sociales, en programas como Adobe Premier
+        & CapCut
+      </p>
+
+      <p>
+        · Experiencia en el uso de diversas herramientas y materiales, tanto
+        para proyectos propios como para trabajos para terceros. Manejo técnicas
+        manuales y artesanales que complementan mis habilidades digitales,
+        permitiendo un enfoque completo desde la idea hasta la realización
+        final.
+      </p>
+    </div>
+  </div>
+
+  <style>
+    .info_artist_card {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      gap: 30px; /* AGREGAR espacio entre imagen y contenido */
+      align-items: center;
+      padding: 30px;
+      background-color: rgba(255, 115, 0, 0.478);
+      box-sizing: border-box;
+      border-radius: 10px; /* Opcional */
+    }
+
+    .info_artist_img {
+      width: auto; /* CAMBIAR - se ajusta automáticamente */
+      height: calc(100vh - 10px); /* Altura completa menos padding (30px x 2) */
+      aspect-ratio: 1 / 1; /* AGREGAR - mantiene forma cuadrada */
+      object-fit: cover;
+      border-radius: 10px; /* Opcional */
+      background-color: #333; /* AGREGAR - para ver el espacio */
+      display: flex;
+    }
+
+    .info_artist_content {
+      flex: 1; /* CAMBIAR - ocupa el espacio restante */
+      display: flex; /* CAMBIAR a flex */
+      flex-direction: column; /* AGREGAR */
+      gap: 15px; /* AGREGAR espacio entre elementos */
+      justify-content: flex-start; /* CAMBIAR - no centra todo */
+    }
+
+    .info_artist_name {
+      /* AGREGAR el punto . */
+      text-align: center;
+      color: white;
+      font-size: 2vw;
+      margin-top: 30px;
+      font-weight: bold; /* AGREGAR */
+    }
+
+    .info_artist_description {
+      /* AGREGAR estilos para el párrafo */
+      text-align: center;
+      color: rgb(20, 20, 40);
+      font-size: 1.2vw;
+      margin-top: auto; /* AGREGAR - empuja hacia abajo */
+      margin-bottom: auto; /* AGREGAR - empuja hacia arriba = CENTRADO */
+    }
+
+    /* --- RESPONSIVE 480PX: INFO ARTISTA --- */
+    @media (max-width: 480px) {
+      .info_artist_card {
+        flex-direction: column; /* Apila imagen + texto */
+        gap: 20px;
+        padding: 20px;
+        min-height: auto;
+      }
+
+      .info_artist_img {
+        height: auto !important;
+        width: 100%;
+        aspect-ratio: 1/1;
+      }
+
+      .info_artist_name {
+        font-size: 6vw;
+        margin-top: 10px;
+      }
+
+      .info_artist_description {
+        font-size: 3vw; /* Más legible en móvil */
+        text-align: left; /* Se lee mejor */
+        margin: 0; /* Saca el centrado vertical */
+      }
+    }
+  </style>
+</div>

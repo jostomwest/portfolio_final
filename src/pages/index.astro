@@ -1,0 +1,249 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PaginaPrincipal from "../components/PaginaPrincipal.astro";
+import CardObra from "../components/CardObra.astro";
+import InfoArtista from "../components/InfoArtista.astro";
+import imagen1 from "../imgs/imagen1.jpg";
+import imagen2 from "../imgs/imagen2.jpg";
+import imagen3 from "../imgs/imagen3.jpg";
+import imagen4 from "../imgs/imagen4.jpg";
+import imagen5 from "../imgs/imagen5.jpg";
+import imagen6 from "../imgs/imagen6.jpg";
+import imagen7 from "../imgs/imagen7.jpg";
+import imagen8 from "../imgs/imagen8.jpg";
+import imagen9 from "../imgs/imagen9.jpg";
+import imagen10 from "../imgs/imagen10.jpg";
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <div class="contenedor">
+    <PaginaPrincipal />
+
+    <div class="pestaña_trabajos">
+      <h2 id="pestaña_trabajos_tittle">Trabajos</h2>
+      <a href="/JostomPrint" class="jostomprint__linkpag">Ver más</a>
+
+      <div class="trabajos_obras">
+        <CardObra
+          sitio="http://instagram.com/jostomprint/"
+          imagen={imagen1}
+          titulo="Jostom Print"
+          descripcion="Serigrafia & Diseño"
+          aspecto="9/16"
+        />
+        <CardObra
+          sitio="http://instagram.com/fraktus.ar/"
+          imagen={imagen2}
+          titulo="Fraktus"
+          descripcion="Marca de ropa"
+          aspecto="9/16"
+        />
+        <CardObra
+          sitio="http://instagram.com/j.o.s.t.o.m/"
+          imagen={imagen4}
+          titulo="Producción"
+          descripcion="Sonido y beatmaking"
+          aspecto="9/16"
+        />
+      </div>
+    </div>
+    <div class="proyectos_academicos">
+      <h2 id="proyectos_academicos_tittle">Proyectos Academicos</h2>
+      <div class="proyectos_academicos_obras">
+        <CardObra
+          titulo="Lectoras de Beethoven"
+          sitio="/ObraLabo6"
+          imagen={imagen5}
+          aspecto="16 / 9"
+        />
+        <CardObra imagen={imagen6} aspecto="16 / 9" />
+        <CardObra imagen={imagen7} aspecto="16 / 9" />
+        <CardObra imagen={imagen8} aspecto="16 / 9" />
+        <CardObra imagen={imagen9} aspecto="16 / 9" />
+        <CardObra imagen={imagen10} aspecto="16 / 9" />
+      </div>
+    </div>
+    <div class="info_artist">
+      <h2 id="info_id_tittle">Info</h2>
+      <InfoArtista />
+    </div>
+  </div>
+
+  <style>
+    /* Para desktop (1024px en adelante) */
+    .contenedor {
+      width: 100vw;
+      height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .jostomprint__linkpag {
+      display: block;
+      margin: 0;
+      padding: 0;
+      margin-left: 30vh;
+      margin-bottom: 1vh;
+      width: fit-content; /* Solo ocupa el ancho del texto */
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .pestaña_trabajos {
+      width: 100%;
+      margin: 2px auto;
+      background-color: rgb(250, 128, 0);
+      overflow: hidden;
+      padding: 20px 0; /* Solo padding arriba y abajo */
+      box-sizing: border-box;
+    }
+
+    #pestaña_trabajos_tittle {
+      color: black;
+      text-transform: uppercase;
+      font-size: 2vw;
+      text-align: center;
+      padding: 0 20px; /* Padding lateral solo para el título */
+      margin: 0 0 20px 0; /* Margen abajo */
+    }
+
+    .trabajos_obras {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      padding: 0 20px 20px 20px; /* Padding lateral para las tarjetas */
+      box-sizing: border-box;
+    }
+
+    .proyectos_academicos {
+      width: 100%;
+      /* height: 100vh; altura total de la pantalla */
+      margin: 0 0;
+      background-color: rgb(5, 5, 70);
+      box-sizing: border-box;
+      padding: 30px 0; /* AGREGAR padding arriba y abajo */
+      display: block;
+    }
+
+    .proyectos_academicos_obras {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Cambiar a repeat */
+      grid-auto-rows: 1fr; /* AGREGAR - filas iguales */
+      gap: 30px;
+      margin: 0;
+      width: calc(100% - 60px); /* AGREGAR - resta el padding lateral */
+      margin: 0 30px; /* AGREGAR - centra con margin */
+    }
+
+    #proyectos_academicos_tittle {
+      color: white;
+      text-transform: uppercase;
+      font-size: 2vw;
+      text-align: center;
+      margin: 0 0;
+    }
+
+    /* Efecto hover para CardObra en proyectos académicos */
+    .proyectos_academicos_obras :global(.obra):hover {
+      transform: scale(1.05);
+      filter: brightness(1.2);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      transition: all 0.4s ease;
+    }
+
+    .proyectos_academicos_obras :global(.obra) {
+      transition: all 0.4s ease;
+    }
+
+    .info_artist {
+      width: 100%; /* CAMBIAR de 100vw */
+      min-height: 100vh; /* CAMBIAR a min-height */
+      margin: 0;
+      padding: 30px; /* AGREGAR padding */
+      background-color: rgb(20, 20, 40);
+      /* ELIMINAR overflow: hidden */
+      box-sizing: border-box; /* AGREGAR */
+    }
+
+    #info_id_tittle {
+      color: white;
+      text-transform: uppercase;
+      font-size: 2vw;
+      text-align: center;
+      margin: 0 0 30px 0; /* AGREGAR margin-bottom */
+    }
+
+    :root {
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 480px) {
+      .jostomprint__linkpag {
+        margin-left: 30vh !important;
+        margin-bottom: 1vh;
+        margin-left: 15px; /* Ajustar margen en móvil */
+        font-size: 4vw; /* Más grande para ser visible */
+      }
+      .pestaña_trabajos {
+        padding: 30px 0; /* Más padding arriba y abajo en móvil */
+        /* background-color: rgb(250, 128, 0); */
+      }
+
+      #pestaña_trabajos_tittle {
+        font-size: 8vw; /* Título más grande en móvil */
+        padding: 0 15px;
+        margin: 0 0 30px 0; /* Más espacio abajo */
+      }
+
+      .trabajos_obras {
+        grid-template-columns: 1fr; /* UNA columna */
+        gap: 20px; /* Gap más pequeño */
+        padding: 0 15px 30px 15px; /* Padding ajustado */
+      }
+
+      .info_artist {
+        padding: 20px;
+        min-height: auto; /* Se ajusta al contenido */
+      }
+
+      #info_id_tittle {
+        font-size: 8vw;
+        margin-bottom: 20px;
+      }
+
+      .proyectos_academicos {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #proyectos_academicos_tittle {
+        font-size: 4vw;
+        text-align: center;
+        margin: 0 0 20px 0;
+      }
+
+      .proyectos_academicos_obras {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+        padding: 0 15px;
+        box-sizing: border-box;
+      }
+
+      /*Asegura que las imágenes se ajusten totalmente */
+      .proyectos_academicos_obras img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+    }
+  </style>
+</Layout>

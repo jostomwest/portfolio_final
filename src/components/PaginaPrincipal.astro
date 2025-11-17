@@ -1,0 +1,167 @@
+<div class="principal">
+  <a href="#pestaña_trabajos_tittle" class="trabajos_link">
+    <article class="trabajos">
+      <h2 class="trabajos__titulo">Trabajos</h2>
+    </article>
+  </a>
+
+  <a href="#proyectos_academicos_tittle" class="proyectos_link">
+    <article class="proyectos">
+      <h2 class="proyectos__titulo">Proyectos Académicos</h2>
+    </article>
+  </a>
+
+  <a href="#info_id_tittle" class="info_link">
+    <article class="info">
+      <h2 class="info__titulo">Info</h2>
+    </article>
+  </a>
+</div>
+
+<style scoped>
+  .principal {
+    display: grid;
+    grid-template-rows: none;
+    grid-template-columns: repeat(3, 1fr); /* tres columnas iguales */
+    height: 100%;
+    background-color: black;
+  }
+  .principal a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+    overflow: hidden
+  }
+
+  .principal a {
+  transition: all 0.4s ease;
+}
+
+  .trabajos,
+  .proyectos,
+  .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: all 0.4s ease; /* AGREGAR - transición suave */
+    position: relative; /* AGREGAR - para el efecto de sombra */
+  }
+
+  .principal:hover a:not(:hover) .trabajos,
+.principal:hover a:not(:hover) .proyectos,
+.principal:hover a:not(:hover) .info {
+  filter: blur(3px) brightness(0.7); /* Desenfoca los que NO tienen hover */
+  transform: scale(0.95); /* Los demás se achican */
+}
+
+.principal a:hover .trabajos,
+.principal a:hover .proyectos,
+.principal a:hover .info {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+  
+
+  #pestaña_trabajos_tittle {
+    color: black;
+    text-transform: uppercase;
+    font-size: 2vw;
+    text-align: center;
+  }
+
+  .trabajos {
+    background-color: rgb(250, 128, 0);
+    place-items: center;
+  }
+
+  .trabajos h2 {
+    color: black;
+    text-transform: uppercase;
+    font-size: 2vw;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.4s ease; /* AGREGAR - transición para el texto */
+    position: relative; /* AGREGAR */
+    z-index: 1; /* AGREGAR - texto encima de la sombra */
+  }
+
+  /* Efecto adicional en el texto (opcional) */
+  .principal a:hover h2 {
+    transform: scale(1.2); /* El texto también crece un poco */
+  }
+  .proyectos {
+    background-color: rgb(5, 5, 70);
+  }
+
+  .proyectos h2 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 2vw;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.4s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  .info {
+    background-color: rgb(20, 20, 40);
+  }
+
+  .info h2 {
+    color: orange;
+    text-transform: uppercase;
+    font-size: 2vw;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.4s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .principal {
+      grid-template-columns: 1fr !important; /* Forzar con !important */
+      grid-template-rows: 1fr 1fr 1fr !important; /* 3 filas iguales */
+      height: 100vh !important;
+    }
+    .principal a:hover .trabajos,
+    .principal a:hover .proyectos,
+    .principal a:hover .info {
+      transform: none; /* Sin zoom en el celular */
+      box-shadow: none; /* Sin sombra en el celular*/
+    }
+
+    .principal a:hover h2 {
+      transform: none; /* Sin zoom del texto en el celular*/
+    }
+    .trabajos h2 {
+      align-items: center;
+      font-size: 6vw !important;
+    }
+    .proyectos h2 {
+      align-items: center;
+      font-size: 6vw !important;
+    }
+    .info h2 {
+      align-items: center;
+      font-size: 6vw !important;
+    }
+
+    #pestaña_trabajos_tittle {
+      font-size: 8vw; /* Más grande */
+      padding: 30px 0;
+    }
+
+    .trabajos_obras {
+      grid-template-columns: 1fr; /* 1 columna */
+      gap: 20px;
+      padding: 20px;
+      min-height: auto;
+    }
+  }
+</style>
